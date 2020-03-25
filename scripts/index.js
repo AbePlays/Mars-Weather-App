@@ -8,7 +8,7 @@ const currentTempHighElement = document.querySelector(
   "[data-current-temp-high]"
 );
 const currentTempLowElement = document.querySelector("[data-current-temp-low]");
-const windSpeedElement = document.querySelector("[data-current-wind-speed]");
+const windSpeedElement = document.querySelector("[data-wind-speed]");
 const windDirectionText = document.querySelector("[data-wind-direction-text]");
 const windDirectionArrow = document.querySelector(
   "[data-wind-direction-arrow]"
@@ -43,9 +43,9 @@ function displaySelectedSol(sols) {
   const selectedSol = sols[selectedSolIndex];
   currentSolElement.innerText = selectedSol.sol;
   currentDateElement.innerText = displayDate(selectedSol.date);
-  currentTempHighElement.innerText = selectedSol.maxTemp;
-  currentTempLowElement.innerText = selectedSol.minTemp;
-  windSpeedElement.innerText = selectedSol.windSpeed;
+  currentTempHighElement.innerText = displayTemp(selectedSol.maxTemp);
+  currentTempLowElement.innerText = displayTemp(selectedSol.minTemp);
+  windSpeedElement.innerText = displaySpeed(selectedSol.windSpeed);
   windDirectionArrow.style.setProperty(
     "--direction",
     `${selectedSol.windDirectionDegrees}deg`
@@ -55,4 +55,12 @@ function displaySelectedSol(sols) {
 
 function displayDate(date) {
   return date.toLocaleDateString(undefined, { day: "numeric", month: "long" });
+}
+
+function displayTemp(temp) {
+  return Math.round(temp);
+}
+
+function displaySpeed(speed) {
+  return Math.round(speed);
 }
