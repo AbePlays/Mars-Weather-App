@@ -19,6 +19,10 @@ const previousSolTemplate = document.querySelector(
 );
 const previousSolContainer = document.querySelector("[data-previous-sols]");
 
+const unitToggle = document.querySelector("[data-unit-toggle]");
+const metricRadio = document.getElementById("cel");
+const imperialRadio = document.getElementById("fah");
+
 function getWeather() {
   return fetch(API_URL)
     .then(res => res.json())
@@ -43,6 +47,11 @@ getWeather().then(sols => {
   selectedSolIndex = sols.length - 1;
   displaySelectedSol(sols);
   displayPreviousSols(sols);
+  unitToggle.addEventListener("click", () => {
+    let metricUnits = !metricRadio.checked;
+    metricRadio.checked = metricUnits;
+    imperialRadio.checked = !metricUnits;
+  });
 });
 
 function displaySelectedSol(sols) {
