@@ -14,6 +14,11 @@ const windDirectionArrow = document.querySelector(
   "[data-wind-direction-arrow]"
 );
 
+const previousSolTemplate = document.querySelector(
+  "[data-previous-sol-template]"
+);
+const previousSolContainer = document.querySelector("[data-previous-sols]");
+
 function getWeather() {
   return fetch(API_URL)
     .then(res => res.json())
@@ -37,6 +42,7 @@ let selectedSolIndex;
 getWeather().then(sols => {
   selectedSolIndex = sols.length - 1;
   displaySelectedSol(sols);
+  displayPreviousSols(sols);
 });
 
 function displaySelectedSol(sols) {
@@ -63,4 +69,28 @@ function displayTemp(temp) {
 
 function displaySpeed(speed) {
   return Math.round(speed);
+}
+
+function displayPreviousSols(sols) {
+  previousSolContainer.innerHTML = "";
+  sols.forEach((solData, index) => {
+    const solContainer = previousSolTemplate.content.cloneNode(true);
+    solContainer.querySelector("[data-sol").innerText = solData.sol;
+    solContainer.querySelector("[data-date]").innerText = displayDate(
+      solData.date
+    );
+    solContainer.querySelector("[data-temp-high]").innerText = displayTemp(
+      solData.maxTemp
+    );
+    solContainer.querySelector("[data-temp-low]").innerText = displayTemp(
+      solData.minTemp
+    );
+    solContainer
+      .querySelector("[data-select-button]")
+      .addEventListener("click", () => {
+        selectedSolIndex = index;
+        displaySelectedSol(sols);
+      });
+    previousSolContainer.appendChild(solContainer);
+  });
 }
