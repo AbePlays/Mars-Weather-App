@@ -41,6 +41,20 @@ body {
   color: var(--clr-light);
 }
 
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
+.main-title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-light);
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  letter-spacing: 2px;
+}
+
 .mars-current-weather {
   background: rgba(0, 0, 0, 0.7);
   padding: 2em;
