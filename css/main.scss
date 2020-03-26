@@ -92,12 +92,13 @@ a {
 
 .date {
   grid-column: 1 / 2;
-  &__day {
-    font-size: var(--fs-h2);
-    margin: 0;
-    color: var(--clr-gray);
-    font-weight: var(--fw-light);
-  }
+}
+
+.date__day {
+  font-size: var(--fs-h2);
+  margin: 0;
+  color: var(--clr-gray);
+  font-weight: var(--fw-light);
 }
 
 .temp {
@@ -110,6 +111,22 @@ a {
 
 .wind {
   grid-column: 3/4;
+}
+
+.wind__direction {
+  --size: 5rem;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.wind__arrow {
+  --direction: 0deg;
+  --size: 1rem;
+  height: var(--size);
+  width: var(--size);
+  background: var(--clr-accent-dark);
 }
 
 .info {
