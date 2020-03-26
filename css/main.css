@@ -89,7 +89,6 @@ a:hover {
   margin: 4em 0 0 4em;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [3];
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
 }
@@ -123,7 +122,6 @@ a:hover {
   grid-column: 3/4;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr) [2];
   grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: min-content 1fr;
   grid-template-rows: -webkit-min-content 1fr;
@@ -182,4 +180,3 @@ a:hover {
   -ms-grid-column-span: 1;
   grid-column: 3/4;
 }
-/*# sourceMappingURL=main.css.map */
