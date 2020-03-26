@@ -32,10 +32,18 @@
 
 body {
   margin: 0;
-  font-family: "Monserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   background-image: url("../img/Mars2.jpg");
+  background-size: cover;
   height: 100vh;
   overflow: hidden;
   color: var(--clr-light);
+}
+
+.mars-current-weather {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2em;
+  max-width: 1000px;
+  margin: 4em 0 0 4em;
 }
