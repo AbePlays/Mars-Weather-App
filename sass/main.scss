@@ -154,6 +154,7 @@ a {
   color: var(--clr-light);
   display: flex;
   opacity: 0.7;
+  transition: opacity 275ms linear;
 
   &:hover {
     opacity: 1;
@@ -175,13 +176,12 @@ a {
 
   &__toggle {
     cursor: pointer;
-    width: 4em;
-    margin: 0 0.5em;
+    width: 5em;
+    margin: 0 1em;
     background: transparent;
     border: 2px solid var(--clr-light);
     padding: 0;
     border-radius: 100vmax;
-    transition: opacity 275ms linear;
 
     &::after {
       content: "";
