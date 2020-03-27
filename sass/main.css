@@ -182,10 +182,30 @@ a:hover {
   -ms-grid-column-span: 1;
   grid-column: 3/4;
   place-self: end;
-  color: var(--clr-gray);
+  color: var(--clr-light);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0.7;
+}
+
+.unit:hover {
+  opacity: 1;
+}
+
+.unit label {
+  cursor: pointer;
+}
+
+.unit input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .unit__toggle {
@@ -193,18 +213,25 @@ a:hover {
   width: 4em;
   margin: 0 0.5em;
   background: transparent;
-  border: 2px solid var(--clr-gray);
+  border: 2px solid var(--clr-light);
   padding: 0;
   border-radius: 100vmax;
+  -webkit-transition: opacity 275ms linear;
+  transition: opacity 275ms linear;
 }
 
 .unit__toggle::after {
   content: "";
   display: block;
-  background: var(--clr-gray);
+  background: var(--clr-light);
   border-radius: 50%;
   height: 1rem;
   margin: 3px;
+  margin-left: auto;
   width: 1rem;
+}
+
+.unit :checked ~ .unit__toggle::after {
+  margin-left: 3px;
 }
 /*# sourceMappingURL=main.css.map */
