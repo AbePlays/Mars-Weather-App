@@ -2,7 +2,7 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 :root {
@@ -24,7 +24,7 @@
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -89,7 +89,8 @@ a:hover {
   margin: 4em 0 0 4em;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
 }
 
@@ -122,12 +123,13 @@ a:hover {
   grid-column: 3/4;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   -ms-grid-rows: min-content 1fr;
-  grid-template-rows: -webkit-min-content 1fr;
-  grid-template-rows: min-content 1fr;
+      grid-template-rows: -webkit-min-content 1fr;
+      grid-template-rows: min-content 1fr;
   -ms-grid-row-align: start;
-  align-self: start;
+      align-self: start;
 }
 
 .wind .section-title,
@@ -158,11 +160,11 @@ a:hover {
   width: var(--size);
   background: var(--clr-accent-dark);
   -webkit-clip-path: polygon(50% 0, 0% 100%, 100% 100%);
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0, 0% 100%, 100% 100%);
   -webkit-transform: translateY(-50%) rotate(var(--direction));
-  transform: translateY(-50%) rotate(var(--direction));
+          transform: translateY(-50%) rotate(var(--direction));
   -webkit-transform-origin: bottom center;
-  transform-origin: bottom center;
+          transform-origin: bottom center;
   -webkit-transition: -webkit-transform 500ms ease;
   transition: -webkit-transform 500ms ease;
   transition: transform 500ms ease;
@@ -180,4 +182,29 @@ a:hover {
   -ms-grid-column-span: 1;
   grid-column: 3/4;
   place-self: end;
+  color: var(--clr-gray);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
+
+.unit__toggle {
+  cursor: pointer;
+  width: 4em;
+  margin: 0 0.5em;
+  background: transparent;
+  border: 2px solid var(--clr-gray);
+  padding: 0;
+  border-radius: 100vmax;
+}
+
+.unit__toggle::after {
+  content: "";
+  display: block;
+  background: var(--clr-gray);
+  border-radius: 50%;
+  height: 1rem;
+  margin: 3px;
+  width: 1rem;
+}
+/*# sourceMappingURL=main.css.map */
