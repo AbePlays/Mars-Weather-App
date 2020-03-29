@@ -218,9 +218,25 @@ a {
 
 .previous-day {
   opacity: 0;
+
   &__date {
     font-size: 0.9rem;
     color: var(--clr-gray);
+  }
+
+  &__more-info {
+    border: 0;
+    border-radius: 100vmax;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    text-transform: uppercase;
+    padding: 0.3em 1em;
+    cursor: pointer;
+    margin-top: 0.1em;
+
+    &:hover {
+      background: var(--clr-gray);
+    }
   }
 }
 
