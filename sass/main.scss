@@ -218,7 +218,10 @@ a {
 
 .previous-day {
   opacity: 0;
-  transition: opacity 350ms linear;
+  &__date {
+    font-size: 0.9rem;
+    color: var(--clr-gray);
+  }
 }
 
 .show-previous-weather {
@@ -254,17 +257,25 @@ a {
 
 .show-weather.previous-weather {
   transform: translateY(0);
+
   .show-previous-weather span {
     display: block;
     transform: rotate(180deg) translateY(-6px);
   }
+
   .previous-weather__title,
   .previous-day {
     animation: slideUpIn 750ms forwards;
   }
+
   .previous-weather__title {
     text-align: left;
   }
+
+  .previous-day > * {
+    margin: 0;
+  }
+
   .previous-day:nth-child(1) {
     animation-delay: 100ms;
   }
