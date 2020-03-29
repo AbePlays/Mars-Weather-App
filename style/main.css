@@ -249,7 +249,7 @@ a:hover {
   transition: -webkit-transform 350ms ease;
   transition: transform 350ms ease;
   transition: transform 350ms ease, -webkit-transform 350ms ease;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .show-previous-weather {
@@ -257,8 +257,8 @@ a:hover {
   background: var(--clr-light);
   left: 50%;
   width: 10rem;
-  -webkit-transform: translate(-50%, calc(-100% - 3rem));
-          transform: translate(-50%, calc(-100% - 3rem));
+  -webkit-transform: translate(-50%, calc(-100% - 1rem));
+          transform: translate(-50%, calc(-100% - 1rem));
   text-align: center;
   font-size: var(--fs-h2);
   line-height: 1;
@@ -291,6 +291,7 @@ a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 0 3rem;
 }
 
 .previous-weather__title {
