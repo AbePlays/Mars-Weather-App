@@ -233,8 +233,18 @@ a {
   &:focus {
     color: var(--clr-dark);
   }
+
+  span {
+    display: block;
+    transform: rotate(0);
+    transition: transform 300ms ease;
+  }
 }
 
-.show-weather {
+.show-weather.previous-weather {
   transform: translateY(0);
+  .show-previous-weather span {
+    display: block;
+    transform: rotate(180deg) translateY(-6px);
+  }
 }
