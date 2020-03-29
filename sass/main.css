@@ -312,6 +312,7 @@ a:hover {
           transform: rotate(180deg) translateY(-6px);
 }
 
+.show-weather.previous-weather .previous-weather__title,
 .show-weather.previous-weather .previous-day {
   -webkit-animation: slideUpIn 750ms forwards;
           animation: slideUpIn 750ms forwards;
@@ -319,6 +320,41 @@ a:hover {
 
 .show-weather.previous-weather .previous-weather__title {
   text-align: left;
+}
+
+.show-weather.previous-weather .previous-day:nth-child(1) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+
+.show-weather.previous-weather .previous-day:nth-child(2) {
+  -webkit-animation-delay: 125ms;
+          animation-delay: 125ms;
+}
+
+.show-weather.previous-weather .previous-day:nth-child(3) {
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+}
+
+.show-weather.previous-weather .previous-day:nth-child(4) {
+  -webkit-animation-delay: 175ms;
+          animation-delay: 175ms;
+}
+
+.show-weather.previous-weather .previous-day:nth-child(5) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+
+.show-weather.previous-weather .previous-day:nth-child(6) {
+  -webkit-animation-delay: 225ms;
+          animation-delay: 225ms;
+}
+
+.show-weather.previous-weather .previous-day:nth-child(7) {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
 }
 
 @-webkit-keyframes slideUpIn {
