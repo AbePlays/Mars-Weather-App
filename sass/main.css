@@ -259,6 +259,12 @@ a:hover {
           justify-content: space-between;
 }
 
+.previous-day {
+  opacity: 0;
+  -webkit-transition: opacity 350ms linear;
+  transition: opacity 350ms linear;
+}
+
 .show-previous-weather {
   position: absolute;
   background: var(--clr-light);
@@ -291,6 +297,10 @@ a:hover {
   transition: transform 300ms ease, -webkit-transform 300ms ease;
 }
 
+.previous-weather__title {
+  text-align: center;
+}
+
 .show-weather.previous-weather {
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -300,5 +310,40 @@ a:hover {
   display: block;
   -webkit-transform: rotate(180deg) translateY(-6px);
           transform: rotate(180deg) translateY(-6px);
+}
+
+.show-weather.previous-weather .previous-day {
+  -webkit-animation: slideUpIn 750ms forwards;
+          animation: slideUpIn 750ms forwards;
+}
+
+.show-weather.previous-weather .previous-weather__title {
+  text-align: left;
+}
+
+@-webkit-keyframes slideUpIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideUpIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 /*# sourceMappingURL=main.css.map */

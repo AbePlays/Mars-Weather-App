@@ -216,6 +216,11 @@ a {
   justify-content: space-between;
 }
 
+.previous-day {
+  opacity: 0;
+  transition: opacity 350ms linear;
+}
+
 .show-previous-weather {
   position: absolute;
   background: var(--clr-light);
@@ -243,10 +248,32 @@ a {
   }
 }
 
+.previous-weather__title {
+  text-align: center;
+}
+
 .show-weather.previous-weather {
   transform: translateY(0);
   .show-previous-weather span {
     display: block;
     transform: rotate(180deg) translateY(-6px);
+  }
+  .previous-day {
+    animation: slideUpIn 750ms forwards;
+  }
+  .previous-weather__title {
+    text-align: left;
+  }
+}
+
+@keyframes slideUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
