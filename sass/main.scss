@@ -199,3 +199,30 @@ a {
     margin-left: 3px;
   }
 }
+
+.previous-weather {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(60%);
+}
+
+.previous-days {
+  display: flex;
+}
+
+.show-previous-weather-label {
+  position: absolute;
+  background: var(--clr-light);
+  left: 50%;
+  width: 10rem;
+  transform: translate(-50%, -140%);
+  text-align: center;
+  font-size: var(--fs-h2);
+  line-height: 1;
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  cursor: pointer;
+  color: var(--clr-gray);
+}
