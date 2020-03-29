@@ -247,12 +247,16 @@ a:hover {
   transition: -webkit-transform 375ms ease;
   transition: transform 375ms ease;
   transition: transform 375ms ease, -webkit-transform 375ms ease;
+  padding: 3em;
 }
 
 .previous-days {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .show-previous-weather {
@@ -260,8 +264,8 @@ a:hover {
   background: var(--clr-light);
   left: 50%;
   width: 10rem;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, calc(-100% - 3rem));
+          transform: translate(-50%, calc(-100% - 3rem));
   text-align: center;
   font-size: var(--fs-h2);
   line-height: 1;
