@@ -102,12 +102,7 @@ a:hover {
 
 .temp {
   --border: solid 0.25em var(--clr-accent-dark);
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-  border-left: var(--border);
-  border-right: var(--border);
-  padding: 0 2em;
+  padding: 2em 0;
 }
 
 .wind {
@@ -127,9 +122,9 @@ a:hover {
 
 .wind .section-title,
 .wind .reading {
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
+  grid-column: 1 / 2;
 }
 
 .wind__direction {
@@ -141,6 +136,9 @@ a:hover {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1 / span 2;
@@ -420,6 +418,36 @@ a:hover {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
+  }
+  .temp {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    border-left: var(--border);
+    border-right: var(--border);
+    padding: 0 2em;
+  }
+  .wind .section-title,
+  .wind .reading {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+  }
+  .wind__direction {
+    --size: 6rem;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / span 2;
   }
 }
 /*# sourceMappingURL=main.css.map */

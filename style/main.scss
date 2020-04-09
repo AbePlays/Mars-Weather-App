@@ -101,10 +101,7 @@ a {
 
 .temp {
   --border: solid 0.25em var(--clr-accent-dark);
-  grid-column: 2 / 3;
-  border-left: var(--border);
-  border-right: var(--border);
-  padding: 0 2em;
+  padding: 2em 0;
 }
 
 .wind {
@@ -116,7 +113,7 @@ a {
 
   .section-title,
   .reading {
-    grid-column: 2 / 3;
+    grid-column: 1 / 2;
   }
 
   &__direction {
@@ -127,6 +124,7 @@ a {
     background-color: rgba(255, 255, 255, 0.5);
     display: grid;
     place-items: center;
+    grid-column: 2/3;
     grid-row: 1 / span 2;
   }
 
@@ -348,5 +346,30 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
+  }
+
+  .temp {
+    grid-column: 2 / 3;
+    border-left: var(--border);
+    border-right: var(--border);
+    padding: 0 2em;
+  }
+
+  .wind {
+    .section-title,
+    .reading {
+      grid-column: 2 / 3;
+    }
+    &__direction {
+      --size: 6rem;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      display: grid;
+      place-items: center;
+      grid-column: 1/2;
+      grid-row: 1 / span 2;
+    }
   }
 }
