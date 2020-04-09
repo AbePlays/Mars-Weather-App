@@ -11,10 +11,10 @@
   --fw-normal: 400;
   --fw-semi: 500;
   --fw-bold: 700;
-  --fs-h1: 1.5rem;
-  --fs-h2: 2.25rem;
+  --fs-h1: 1.25rem;
+  --fs-h2: 1.75rem;
   --fs-body: 1rem;
-  --fs-xl: 4.5rem;
+  --fs-xl: 4rem;
   --clr-light: #fff;
   --clr-gray: #989898;
   --clr-dark: #444;
@@ -38,8 +38,7 @@ body {
   line-height: 1.6;
   background-image: url(../img/Mars2.jpg);
   background-size: cover;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
   color: var(--clr-light);
 }
 
@@ -87,10 +86,6 @@ a {
   background: rgba(0, 0, 0, 0.7);
   padding: 2em;
   max-width: 1000px;
-  margin: 4em 0 0 4em;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2em;
 }
 
 .date {
@@ -208,6 +203,7 @@ a {
 }
 
 .previous-weather {
+  display: none;
   background: var(--clr-light);
   color: var(--clr-dark);
   position: absolute;
@@ -332,5 +328,25 @@ a {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (min-wdith: 900px) {
+  :root {
+    --fs-h1: 1.5rem;
+    --fs-h2: 2.25rem;
+    --fs-body: 1rem;
+    --fs-xl: 4.5rem;
+  }
+  bpdy {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .mars-current-weather {
+    margin: 4em 0 0 4em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
   }
 }
