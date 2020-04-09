@@ -149,8 +149,8 @@ a:hover {
   /* update Custom Props in JS
         to update the direction */
   --direction: 180deg;
-  --size: 0.75rem;
-  height: calc(var(--size) * 3);
+  --size: 1rem;
+  height: calc(var(--size) * 2);
   width: var(--size);
   background: var(--clr-accent-dark);
   -webkit-clip-path: polygon(50% 0, 0% 100%, 100% 100%);
@@ -244,7 +244,7 @@ a:hover {
   transition: -webkit-transform 350ms ease;
   transition: transform 350ms ease;
   transition: transform 350ms ease, -webkit-transform 350ms ease;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .show-previous-weather {
@@ -252,8 +252,8 @@ a:hover {
   background: var(--clr-light);
   left: 50%;
   width: 10rem;
-  -webkit-transform: translate(-50%, calc(-100% - 3rem));
-          transform: translate(-50%, calc(-100% - 3rem));
+  -webkit-transform: translate(-50%, calc(-100% - 1rem));
+          transform: translate(-50%, calc(-100% - 1rem));
   text-align: center;
   font-size: var(--fs-h2);
   line-height: 1;
@@ -286,6 +286,7 @@ a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 0 3rem;
 }
 
 .previous-weather__title {
@@ -451,6 +452,9 @@ a:hover {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
+  }
+  .previous-weather {
+    display: block;
   }
   .temp {
     -ms-grid-column: 2;
