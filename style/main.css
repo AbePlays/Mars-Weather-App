@@ -111,8 +111,11 @@ a:hover {
   grid-column: 3 / 4;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+  -ms-grid-columns: min-content 1fr;
+      grid-template-columns: -webkit-min-content 1fr;
+      grid-template-columns: min-content 1fr;
   -ms-grid-rows: min-content 1fr;
       grid-template-rows: -webkit-min-content 1fr;
       grid-template-rows: min-content 1fr;
@@ -128,7 +131,7 @@ a:hover {
 }
 
 .wind__direction {
-  --size: 6rem;
+  --size: 4rem;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
@@ -148,7 +151,7 @@ a:hover {
   /* update Custom Props in JS
         to update the direction */
   --direction: 180deg;
-  --size: 1rem;
+  --size: 0.75rem;
   height: calc(var(--size) * 3);
   width: var(--size);
   background: var(--clr-accent-dark);
@@ -448,6 +451,9 @@ a:hover {
     -ms-grid-row: 1;
     -ms-grid-row-span: 2;
     grid-row: 1 / span 2;
+  }
+  .wind__arrow {
+    --size: 1rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
