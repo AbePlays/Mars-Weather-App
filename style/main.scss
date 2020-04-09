@@ -62,7 +62,6 @@ a {
   text-transform: uppercase;
   color: var(--clr-accent);
   letter-spacing: 2px;
-
   grid-column: 1 / -1;
 }
 
@@ -84,8 +83,9 @@ a {
 
 .mars-current-weather {
   background: rgba(0, 0, 0, 0.7);
-  padding: 2em;
+  padding: 6em 2em 2em;
   max-width: 1000px;
+  margin: 1em;
 }
 
 .date {
@@ -105,7 +105,6 @@ a {
 }
 
 .wind {
-  grid-column: 3 / 4;
   display: grid;
   column-gap: 1em;
   grid-template-columns: min-content 1fr;
@@ -145,11 +144,12 @@ a {
   }
 }
 
-.info {
-  grid-column: 1 / 3;
-}
-
 .unit {
+  @media (max-width: 900px) {
+    position: absolute;
+    left: 3em;
+    top: 3em;
+  }
   grid-column: 3 / 4;
   place-self: end;
   color: var(--clr-light);
@@ -210,7 +210,7 @@ a {
   width: 100%;
   transform: translateY(60%);
   transition: transform 350ms ease;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 .show-previous-weather {
@@ -243,7 +243,6 @@ a {
 .previous-days {
   display: flex;
   justify-content: space-between;
-  padding: 0 3rem;
 }
 
 .previous-weather__title {
@@ -330,6 +329,27 @@ a {
   }
 }
 
+@media (min-width: 600px) {
+  .date {
+    grid-column: 1/-1;
+  }
+
+  .mars-current-weather {
+    display: grid;
+    row-gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .temp {
+    grid-column: 1/2;
+    padding: 0;
+  }
+
+  .wind {
+    grid-column: 2/3;
+  }
+}
+
 @media (min-wdith: 900px) {
   :root {
     --fs-h1: 1.5rem;
@@ -337,16 +357,24 @@ a {
     --fs-body: 1rem;
     --fs-xl: 4.5rem;
   }
-  bpdy {
+  body {
     height: 100vh;
     overflow: hidden;
   }
 
+  .date {
+    grid-column: 1/2;
+  }
+
+  .info {
+    grid-column: 1 / 3;
+  }
+
   .mars-current-weather {
-    margin: 4em 0 0 4em;
-    display: grid;
+    margin: 4em 4em 0 4em;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2em;
+    padding: 2em;
   }
 
   .temp {
@@ -357,18 +385,14 @@ a {
   }
 
   .wind {
+    grid-column: 3 / 4;
+
     .section-title,
     .reading {
       grid-column: 2 / 3;
     }
     &__direction {
       --size: 6rem;
-      width: var(--size);
-      height: var(--size);
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.5);
-      display: grid;
-      place-items: center;
       grid-column: 1/2;
       grid-row: 1 / span 2;
     }
