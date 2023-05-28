@@ -34,7 +34,7 @@
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
   background-image: url(../img/Mars2.jpg);
   background-size: cover;
@@ -185,7 +185,7 @@ a {
     margin: 0 1em;
 
     &::after {
-      content: "";
+      content: '';
       display: block;
       background: var(--clr-light);
       border-radius: 50%;
